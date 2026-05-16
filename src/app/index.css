@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Tema base — sobreescrito por el tenant */
+  --color-primary: #7c3aed;
+  --color-secondary: #4f46e5;
+  --color-accent: #ffd700;
+  --color-surface: #1e1033;
+  --color-bg: #0f0820;
+  --font-game: 'Press Start 2P', 'Courier New', monospace;
+  --font-ui: 'VT323', 'Courier New', monospace;
+
+  /* Wisemancer design system */
+  --gold:       #F4D03F;
+  --primary:    #9B5DE5;
+  --primary-d:  #6B3FA0;
+  --primary-l:  #C792EA;
+  --text:       #E0E0F0;
+  --text-dim:   #9A9AB8;
+  --text-rune:  #7D5FB3;
+  --shadow:     #0D0D1A;
+  --font-display: 'Press Start 2P', 'Courier New', monospace;
+  --font-body:    'VT323', 'Courier New', monospace;
+}
+
+@keyframes blink {
+  0%, 60% { opacity: 1; }
+  60.01%, 100% { opacity: 0.2; }
+}
+@keyframes tw {
+  0%, 70% { opacity: 1; transform: scale(1); }
+  70.01%, 100% { opacity: 0.25; transform: scale(0.6); }
+}
+@keyframes spk {
+  0%   { opacity: 0;   transform: rotate(0deg)   scale(0.6); }
+  25%  { opacity: 1;   transform: rotate(0deg)   scale(1.1); }
+  50%  { opacity: 0.8; transform: rotate(45deg)  scale(1);   }
+  75%  { opacity: 0.5; transform: rotate(45deg)  scale(0.7); }
+  100% { opacity: 0;   transform: rotate(90deg)  scale(0.6); }
+}
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 5px 5px 0 #1d0d3a, 0 0 18px rgba(255,215,0,0.55), 0 0 36px rgba(255,215,0,0.25); }
+  50%       { box-shadow: 5px 5px 0 #1d0d3a, 0 0 26px rgba(255,215,0,0.85), 0 0 52px rgba(255,215,0,0.45); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+@keyframes beamSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.08); }
+}
+@keyframes fall {
+  0%   { transform: translate(0, -20px); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translate(var(--drift, 0px), 900px); opacity: 0; }
+}
+@keyframes burst {
+  0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  40%       { opacity: 1; transform: scale(1.1) rotate(45deg); }
+  60%       { opacity: 0.6; transform: scale(0.9) rotate(45deg); }
+}
+@keyframes punchIn {
+  0%   { opacity: 0; transform: scale(0.4) translateY(-12px); }
+  60%  { opacity: 1; transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes bobSlow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-3px); }
+}
+@keyframes auraPulse {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+@keyframes auraSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes dashTw {
+  0%, 70%      { opacity: 0.7; }
+  70.01%, 100% { opacity: 0.15; }
+}
+@keyframes dashSpk {
+  0%, 100% { opacity: 0; transform: scale(0.6) rotate(0deg); }
+  40%       { opacity: 1; transform: scale(1.1) rotate(45deg); }
+}
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(204,34,0,0.8); transform: scale(1); }
+  50%       { box-shadow: 0 0 12px rgba(204,34,0,1);  transform: scale(1.15); }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--color-bg);
+  overscroll-behavior: none;
+}
+
+/* Scrollbar invisible para mobile */
+::-webkit-scrollbar {
+  display: none;
+}
